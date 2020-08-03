@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5967920",
+      "name": "en",
+      "font_class": "en-copy",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "11923478",
+      "name": "cn",
+      "font_class": "zhongguoshijiao",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "15548833",
+      "name": "Logo GitHub",
+      "font_class": "huaban88",
+      "unicode": "e501",
+      "unicode_decimal": 58625
+    },
+    {
+      "icon_id": "16088432",
+      "name": "linkedin",
+      "font_class": "linked1",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    }
+  ]
+}
