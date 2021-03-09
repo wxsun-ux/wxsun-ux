@@ -12,7 +12,7 @@
 
 
 
-<title>/#GameJam /#GGJ2021 Who Moved My Acorn? | Wenxin Sun</title>
+<title>/#GameDev How to Build Your Own 2D Game Using Unity | Wenxin Sun</title>
 
 
 
@@ -165,7 +165,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">/#GameJam /#GGJ2021 Who Moved My Acorn?</h1>
+            <h1 class="post-title">/#GameDev How to Build Your Own 2D Game Using Unity</h1>
             
                 <div class="post-meta">
                     
@@ -174,7 +174,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">February 28, 2021&nbsp;&nbsp;21:27:19</a>
+                        Date: <a href="#">March 2, 2021&nbsp;&nbsp;16:28:15</a>
                         </span>
                     
                     
@@ -183,14 +183,15 @@
         </header>
 
         <div class="post-content">
-            <p>This game is only for Global Game Jam 2021 (<a target="_blank" rel="noopener" href="https://globalgamejam.org/">GGJ2021</a>) and no commercial purpose.<br>Thanks for the free assets from Ansimuz and Tiny Worlds on Unity Asset Store. Thanks for Micheal Wang’s Unity tutorial on Bilibili &amp; YouTube. Thanks for Wenxin and Jingjing contributing to this game on programming and 2D arts.</p>
-<p><img src="https://www.husky66.com/sun/WebGL/pic/ggj2021.jpg" alt="GGJ2021"></p>
-<h2 id="Game-Details"><a href="#Game-Details" class="headerlink" title="Game Details"></a>Game Details</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><a target="_blank" rel="noopener" href="https://globalgamejam.org/2021/games/who-moved-my-acorn-3">Who Moved My Acorn?</a><br>The squirrel lost its acorn. Prompting by the lights in dark, the squirrel finally found its acorn.</p>
-<h3 id="Jam-Site"><a href="#Jam-Site" class="headerlink" title="Jam Site"></a>Jam Site</h3><p><a target="_blank" rel="noopener" href="https://globalgamejam.org/2021/jam-sites/ggj-china-2021-ciga%E7%BA%BF%E4%B8%8A%E7%AB%99%E7%82%B9">GGJ China2021-CiGA 线上站点</a></p>
-<h3 id="Jam-Year"><a href="#Jam-Year" class="headerlink" title="Jam Year"></a>Jam Year</h3><p>2021</p>
-<h3 id="Tools-And-Technologies"><a href="#Tools-And-Technologies" class="headerlink" title="Tools And Technologies"></a>Tools And Technologies</h3><p><a target="_blank" rel="noopener" href="https://unity.cn/">Unity</a></p>
-<h3 id="Play-Now"><a href="#Play-Now" class="headerlink" title="Play Now!"></a>Play Now!</h3><p><a target="_blank" rel="noopener" href="https://www.husky66.com/sun/WebGL/WebGLBuild_WMMC/">Play!</a></p>
+            <p>Using <a target="_blank" rel="noopener" href="https://docs.unity3d.com/Manual/Unity2D.html">Unity2D</a> to create a 2D game is the start for most beginners. Wirh 2D game developing tools in Unity, developers can quickly build the game platform and implement your first game. This article will tell you the essential tools to create a 2D game in Unity.<br><img src="https://www.husky66.com/sun/WebGL/pic/2dgame-1.gif" alt="2DGame"><br><a href="#">Play Now!</a></p>
+<h2 id="Background-amp-Platform-amp-Environment"><a href="#Background-amp-Platform-amp-Environment" class="headerlink" title="Background &amp; Platform &amp; Environment"></a>Background &amp; Platform &amp; Environment</h2><h3 id="Tilemap"><a href="#Tilemap" class="headerlink" title="Tilemap"></a>Tilemap</h3><p>The Tilemap component is a system which stores and handles Tile Assets for creating 2D levels. It transfers the required information from the Tiles placed on it to other related components such as the Tilemap Renderer, the Tilemap Collider 2D and the Rigidbody2D.<br><a target="_blank" rel="noopener" href="https://docs.unity3d.com/Manual/class-Tilemap.html">More Information</a></p>
+<h3 id="Collider-2D"><a href="#Collider-2D" class="headerlink" title="Collider 2D"></a>Collider 2D</h3><p>Collider 2D components define the shape of a 2D GameObject for the purposes of physical collisions. A Collider, which is invisible, need not be the exact same shape as the GameObject’s Mesh; in fact, a rough approximation is often more efficient and indistinguishable in gameplay.<br><a target="_blank" rel="noopener" href="https://docs.unity3d.com/Manual/Collider2D.html">More Information</a></p>
+<h3 id="Rigidbody-2D"><a href="#Rigidbody-2D" class="headerlink" title="Rigidbody 2D"></a>Rigidbody 2D</h3><p>A Rigidbody 2D component places an object under the control of the physics engine. Many concepts familiar from the standard Rigidbody component carry over to Rigidbody 2D; the differences are that in 2D, objects can only move in the XY plane and can only rotate on an axis perpendicular to that plane.<br><a target="_blank" rel="noopener" href="https://docs.unity3d.com/Manual/class-Rigidbody2D.html">More Information</a></p>
+<h2 id="Player-Controller"><a href="#Player-Controller" class="headerlink" title="Player Controller"></a>Player Controller</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Rigidbody2D rb;</span><br><span class="line">rb = GetComponent&lt;Rigidbody2D&gt;();</span><br><span class="line"></span><br><span class="line">rb.velocity = <span class="keyword">new</span> Vector2(horizontalInput * speed, rb.velocity.y);</span><br><span class="line">rb.velocity = <span class="keyword">new</span> Vector2(rb.velocity.x, jumpForce);</span><br></pre></td></tr></table></figure>
 
+<h2 id="Player-Animation"><a href="#Player-Animation" class="headerlink" title="Player Animation"></a>Player Animation</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Animator anim;</span><br><span class="line">anim = GetComponent&lt;Animator&gt;();</span><br><span class="line"></span><br><span class="line">anim.SetFloat(<span class="string">&quot;xSpeed&quot;</span>, Mathf.Abs(rb.velocity.x));</span><br><span class="line">anim.SetBool(<span class="string">&quot;jump&quot;</span>, player.isJump);</span><br><span class="line">anim.SetFloat(<span class="string">&quot;ySpeed&quot;</span>, rb.velocity.y);</span><br><span class="line">anim.SetBool(<span class="string">&quot;ground&quot;</span>, player.isGround);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Player-amp-Environment"><a href="#Player-amp-Environment" class="headerlink" title="Player &amp; Environment"></a>Player &amp; Environment</h2>
         </div>
 
         
@@ -204,7 +205,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://wxsun-ux.github.io/wxsun-ux/2021/02/28/GGJ2021/">https://wxsun-ux.github.io/wxsun-ux/2021/02/28/GGJ2021/</a></span>
+                        <span><a href="https://wxsun-ux.github.io/wxsun-ux/2021/03/02/2DGame/">https://wxsun-ux.github.io/wxsun-ux/2021/03/02/2DGame/</a></span>
                     </p>
                 
                 
@@ -237,8 +238,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/wxsun-ux/2021/03/02/2DGame/">/#GameDev How to Build Your Own 2D Game Using Unity</a>
             
+            <a class="next" rel="next" href="/wxsun-ux/2021/02/28/GGJ2021/">/#GameJam /#GGJ2021 Who Moved My Acorn?</a>
             
         </section>
 
